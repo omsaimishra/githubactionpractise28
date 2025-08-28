@@ -25,9 +25,9 @@ jobs:
       runs-on: ubuntu-latest
       steps:
        - name: artifact
-       - run: echo "1,2,3,4" > first.txt
+         run: echo "1,2,3,4" > first.txt
        - name: upload
-         uses: actions/uplaod-artifact@v4
+         uses: actions/upload-artifact@v4
          with:
             name: versionfile
             path: first.txt
@@ -35,8 +35,6 @@ jobs:
    artifaactdownload:
       runs-on: ubuntu-latest
       steps: 
-        - name: uplaod
-          run: cat first.txt
         - name: artifactdownlaod
           uses: actions/download-artifact@v4
           with:
