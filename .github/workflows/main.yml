@@ -1,7 +1,7 @@
 name: hello action
-  on: [push]
+on: [push]
 
- jobs:
+jobs:
    helloaction:
      runs-on: ubuntu-latest
      steps:
