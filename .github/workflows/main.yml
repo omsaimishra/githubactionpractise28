@@ -21,6 +21,17 @@ jobs:
      steps:
        - run: echo "$name"
        - run: echo ${{secrets.MAIN_SO}}
+   artifact:
+      runs-on: ubuntu_latest
+      steps:
+       - name: artifact
+       - run: echo "1,2,3,4" > first.txt
+         uses: action/uplaod-artifact@v4
+         with:
+            name: versionfile
+            path: first.txt
+         
+      
       
         
     
