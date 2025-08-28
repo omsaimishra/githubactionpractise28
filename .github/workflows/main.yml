@@ -1,0 +1,9 @@
+name: hello action
+  on: [push]
+
+ jobs:
+   helloaction:
+     runs-on: ubuntu-latest
+     steps:
+      - name: hello action
+        run: echo "hello-action"
