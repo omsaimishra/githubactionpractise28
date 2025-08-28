@@ -13,3 +13,13 @@ jobs:
      steps:
       - name: hello action
         run: echo "hello-action"
+   envandsecrets:
+     runs-on: windows-latest
+     env:
+       name: chiku
+     steps:
+       - run: echo "$name"
+       - run: echo ${{secrets.MAIN_SO}}
+      
+        
+    
