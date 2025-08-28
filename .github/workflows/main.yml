@@ -13,7 +13,7 @@ jobs:
      steps:
       - name: hello action
         run: echo "hello-action"
-   envandsecrets:
+   envandsecrets: 
      runs-on: ubuntu-latest
      needs: helloaction
      env:
@@ -21,16 +21,27 @@ jobs:
      steps:
        - run: echo "$name"
        - run: echo ${{secrets.MAIN_SO}}
-   artifact:
-      runs-on: ubuntu_latest
+   artifactupload:
+      runs-on: ubuntu-latest
       steps:
        - name: artifact
        - run: echo "1,2,3,4" > first.txt
-         uses: action/uplaod-artifact@v4
+       - name: upload
+         uses: actions/uplaod-artifact@v4
          with:
             name: versionfile
             path: first.txt
          
+   artifaactdownload:
+      runs-on: ubuntu-latest
+      steps: 
+        - name: uplaod
+          run: cat first.txt
+        - name: artifactdownlaod
+          uses: actions/download-artifact@v4
+          with:
+           name: versionfile
+        -  run: cat first.txt
       
       
         
